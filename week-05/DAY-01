@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+class student {
+private:    
+ int clas;
+ string name;
+
+ char secion;
+ public:
+  void setclas(int c){
+    this->clas=c; 
+  }
+  void setname( const string & n){
+    this->name=n;
+  }
+  void setsection(char c){
+    this->secion=c;
+  }
+  void print(){
+    cout<<this->clas<<" "<<this->name<<" "<<this->secion<<" "<<endl;
+  }
+};
+int main() {
+    student rishi;
+    rishi.setclas(13);
+    rishi.setname("rishi singh");
+    rishi.setsection('A');
+    rishi.print();
+
+    return 0;
+}
