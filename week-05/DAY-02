@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+class human {
+protected:
+    int age;
+
+private:
+    int height;
+
+public:
+    int weight;
+
+    void setage(int a) {
+        this->age = a;
+    }
+};
+
+class male : public human {   
+public:
+    char color[20];
+
+    void setweight(int w) {
+        this->weight = w;
+    }
+
+    int getage() {
+        return age;
+    }
+
+    int getweight() {
+        return weight;
+    }
+};
+
+int main() {
+    male rishi;
+
+    rishi.setage(20);
+    rishi.setweight(65);
+
+    cout << rishi.getage() << " " << rishi.getweight() << endl;
+
+    return 0;
+}
