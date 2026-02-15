@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class animal {
+    public:
+    void sound(){
+        cout<<"they make sound"<<endl;
+    }
+};
+class human: public animal{
+    public:
+    void sound(){
+        cout<<"they speak languages";
+    }
+};
+class male:public human{
+    public:
+    void sound(){
+        cout<<"they speak truth and false";
+    }
+};
+int main() {
+    male r;
+    r.animal::sound();
+     r.human::sound();
+      r.sound();
+    return 0;
+}
