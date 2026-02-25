@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+class node{
+   public:
+   int value;
+   node* next;
+   node* prev;
+   node(int val){
+    value=val;
+    next=prev=NULL;
+   }
+};
+class doublelist{
+node*head;
+node*tail;
+public:
+doublelist(){
+head=tail=NULL;
+}
+void puch_front(int val){
+    node* newnode=new node(val);
+    if(head==NULL)
+    head=tail=newnode;
+    else{
+        newnode->next=head;
+        head->prev=newnode;
+        head=newnode;
+    }
+}
+void push_back(int val){
+    node* newnode=new node(val);
+    if(head==NULL){
+        head=tail=NULL;
+    }
+    else{
+        newnode->prev=tail;
+        tail->next=newnode;
+        newnode->next=NULL;
+        tail=newnode;
+    }
+}
+void print(){
+    node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->value<<"->";
+        temp=temp->next;
+    }
+}
+
+};
+
+int main() {
+    doublelist li;
+    li.puch_front(14);
+    li.puch_front(12);
+    li.puch_front(15);
+    li.push_back(134);
+    li.push_back(0);
+    li.print();
+    return 0;
+}
